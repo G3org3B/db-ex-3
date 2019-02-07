@@ -42,6 +42,18 @@ SELECT * FROM `paganti` WHERE 1 AND `ospite_id` IS NOT NULL;
 -- ex-9
 SELECT SUM(beds) FROM `stanze`;
 
+-- LE GROUP BY
+-- ex-1
+SELECT COUNT(id), YEAR(date_of_birth) FROM `ospiti` GROUP BY YEAR(date_of_birth);
+-- ex-2
+SELECT SUM(price), status FROM `pagamenti` GROUP BY `status`;
+-- ex-3
+SELECT COUNT(id), stanza_id FROM `prenotazioni` GROUP BY `stanza_id`;
+-- ex-4
+SELECT COUNT(id), HOUR(updated_at) FROM `prenotazioni` GROUP BY HOUR(updated_at);
+-- ex-5
+SELECT COUNT(id), ospite_id FROM `prenotazioni_has_ospiti` GROUP BY `ospite_id` ORDER BY COUNT(ospite_id)DESC LIMIT 1;-- cosi' mi prende solo il primo
+
 
 
 
