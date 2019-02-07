@@ -18,7 +18,32 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `schema`
---
+-- _______________________________ ____________________________ ____________________________
+
+-- ESERCIZIO
+
+-- SELECT ES
+-- ex-1
+SELECT * FROM `ospiti` WHERE 1 AND `document_type` = 'CI';
+-- ex-2
+SELECT * FROM `ospiti` WHERE 1 AND `date_of_birth` > '1988-01-01';
+-- ex-3
+SELECT * FROM `ospiti` WHERE 1 AND `date_of_birth` < '1999-02-05';
+-- ex-4
+SELECT * FROM `ospiti` WHERE 1 AND `name` LIKE 'D%';
+-- ex-5
+SELECT COUNT(id) FROM `pagamenti` WHERE 1 AND `status` = 'accepted';
+-- ex-6
+SELECT MAX(price) FROM `pagamenti`;
+-- ex-7
+SELECT * FROM `ospiti` AS 'Ospiti con licenza' WHERE 1 AND `document_type` = 'Driver License' AND `date_of_birth` >= '1975-01-01' AND `date_of_birth` <= '1975-12-31';
+-- ex-8
+SELECT * FROM `paganti` WHERE 1 AND `ospite_id` IS NOT NULL;
+-- ex-9
+SELECT SUM(beds) FROM `stanze`;
+
+
+
 
 -- --------------------------------------------------------
 
